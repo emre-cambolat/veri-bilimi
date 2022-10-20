@@ -19,13 +19,15 @@ class Calisan:
         else:
             vergiMiktari = self.maas * 0.18
         # print('Vergi Miktarı: ' + str(vergiMiktari))
+        self.vergiMiktari = vergiMiktari
 
     def sonDurumMaas(self):
-        global vergisizMaas
-        vergisizMaas = self.maas - vergiMiktari
+        self.vergisizMaas = self.maas - self.vergiMiktari
         # print("Son Durum Maaş: " + str(vergisizMaas))
 
     def goster(self):
+        self.vergiHesapla()
+        self.sonDurumMaas()
         print("TC: ", self.tcKimlikNo, ", Ad Soyad: ", self.ad, " ", self.soyad, ", Yaş: ",
               self.yas, ", Maaş: ", self.maas, ", Çalışma Saati: ", self.calismaSaati, ", Vergisiz Maaş: ", self.vergisizMaas)
 
@@ -42,12 +44,11 @@ class PartTimeCalisan(Calisan):
 
 class FullTimeCalisan(Calisan):
     def __init__(self, _tcKimlikNo, _ad, _soyad, _yas, _maas):
-        super().__init__(_tcKimlikNo, _ad, _soyad, _yas, _maas)
+        super().__init__(_tcKimlikNo, _ad, _soyad, _yas, _maas, 0)
 
     def goster(self):
-        print(self.tcKimlikNo, " ", self.ad, " ",
-              self.soyad, " ", self.yas, " ", self.maas)
-
+        self.vergiHesapla()
+        self.sonDurumMaas()
         print("TC: ", self.tcKimlikNo, ", Ad Soyad: ", self.ad, " ", self.soyad, ", Yaş: ",
               self.yas, ", Maaş: ", self.maas, ", Vergisiz Maaş: ", self.vergisizMaas)
 
@@ -58,8 +59,9 @@ class FullTimeCalisan(Calisan):
 
 
 partTimeCalisan = PartTimeCalisan(56798776723, "Emre", "Cambolat", 23, 100, 32)
-# fullTimeCalisan = FullTimeCalisan(23478075633, "Veli", "Bacik", 27, 9000)
+fullTimeCalisan = FullTimeCalisan(23478075633, "Veli", "Bacik", 27, 9000)
 
-partTimeCalisan.vergiHesapla()
-partTimeCalisan.sonDurumMaas()
+
 partTimeCalisan.goster()
+fullTimeCalisan.goster()
+
