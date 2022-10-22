@@ -1,0 +1,22 @@
+﻿No      Ad-Soyad           Vize      Final     Proje
+
+11       Ayşe Gök            69        57         70
+12       Ahmet Altın         26        43         50
+
+13       Can Emek           80        60         70
+
+14       Nesrin Aş            75        30         70
+
+15       Ayşe Yılmaz        70        96         90
+
+16       Sena Dönmez      93        25         80
+
+17       Suna Keser         78        88         49
+18       Mehmet Tuna      55        71        75
+
+19       Leman Kaş         69        87         68
+
+20       Adem Bilir          89        68         75
+
+21       Adem Yutmaz     68        88         95
+
